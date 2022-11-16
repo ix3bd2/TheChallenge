@@ -18,3 +18,15 @@ export default {
     </ul>
   </div>
 </template>
+
+<style scoped>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline;
+    }
+</style>

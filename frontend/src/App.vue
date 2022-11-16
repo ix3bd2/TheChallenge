@@ -4,9 +4,11 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <Navbar />
+  <div>
+    <Navbar />
 
-  <RouterView />
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
