@@ -5,14 +5,16 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div>
     <nav-bar/>
+    <left-nav-bar/>
     <RouterView />
   </div> 
 </template>
 
 <script>
 import NavBar from "./components/Navbar.vue";
+import LeftNavBar from "./components/LeftNavbar.vue";
 export default {
-  components: { NavBar },
+  components: { NavBar, LeftNavBar },
   name: "App",
 };
 </script>

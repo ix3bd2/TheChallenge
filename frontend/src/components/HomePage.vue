@@ -36,7 +36,7 @@ export default {};
   font-size: 17px;
   position: absolute;
   left: 50%;
-  bottom: 5%;
+  bottom: 3%;
   transform: translate(-50%, -50%);
 }
 .concept-equipment {
