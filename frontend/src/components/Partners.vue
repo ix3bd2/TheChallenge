@@ -4,10 +4,7 @@
       <div class="row header" style="max-width: 100%; height: 100vh">
         <div class="col-lg-6 col-sm-12 text-col">
           <h1 class="h1-header">
-            <span> Generate&nbsp;</span>
-            <span> energy &nbsp;</span><br />
-            <span> for</span>
-            <span> &nbsp;free </span>
+            <span> Partners&nbsp;</span>
           </h1>
         </div>
         <div class="col-lg-6 col-sm-12 sport-col">
@@ -147,18 +144,6 @@ span:nth-child(1) {
 
 span:nth-child(2) {
   animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-span:nth-child(3) {
-  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-span:nth-child(4) {
-  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-span:nth-child(5) {
-  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
 @keyframes fade-in {
