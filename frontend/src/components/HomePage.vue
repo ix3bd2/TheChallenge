@@ -1,20 +1,18 @@
 <template>
   <div class="home-page-main">
-    <div class="row" style="max-width:100%; height:100%">
+    <div class="row header" style="max-width: 100%; height: 100%">
       <div class="col-lg-6 col-sm-12 text-col">
         <h1 class="h1-header">
-  <span> Generate&nbsp;</span>
-  <span> energie &nbsp;</span><br/>
-  <span> for</span>
-  <span> &nbsp;free </span>
-  
-</h1>
+          <span> Generate&nbsp;</span>
+          <span> energy &nbsp;</span><br />
+          <span> for</span>
+          <span> &nbsp;free </span>
+        </h1>
       </div>
       <div class="col-lg-6 col-sm-12 sport-col">
         <img class="sport-equipment" src="../assets/machine.png" />
         <img class="concept-equipment" src="../assets/concept-machine.png" />
       </div>
-     
     </div>
 
     <div class="machine-text">
@@ -23,11 +21,23 @@
         energy.
       </p>
     </div>
+    <div class="sec2">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12"></div>
+        <div class="col-lg-6 col-sm-12">
+          <div class="sec2-img"></div>
+        </div>
+      </div>
+    </div>
+    <thefooter/>
   </div>
 </template>
 
 <script>
-export default {};
+import Thefooter from "./Thefooter.vue"
+export default {
+  components: { Thefooter },
+};
 </script>
 
 <style>
@@ -40,15 +50,15 @@ export default {};
   background-repeat: no-repeat;
   background-size: cover;
 }
-.sport-col{
+.sport-col {
   position: relative;
 }
 .sport-equipment {
   height: 85%;
   position: absolute;
-  top: 55% ;
+  top: 55%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 4;
 }
 .machine-text {
@@ -59,6 +69,14 @@ export default {};
   bottom: 3%;
   transform: translate(-50%, -50%);
 }
+.sec2-img{
+      clip-path: polygon(15% 0,100% 0,100% 100%,0 100%);
+    width: 100%;
+    background-image: url(../assets/gym-pic.jpeg);
+    height: 600px;
+    background-size: cover;
+    background-position: 50%;
+}
 .concept-equipment {
   height: 23%;
   position: absolute;
@@ -67,17 +85,17 @@ export default {};
   z-index: 3;
   transform: translate(-50%, -50%);
 }
-.text-col{
+.text-col {
   position: relative;
 }
 
-.h1-header{
+.h1-header {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-family: Cambria, Georgia, serif;
-  position: fixed;
-  transform: translate(-50%,-50%);
+  position: absolute;
+  transform: translate(-50%, -50%);
   top: 40%;
-  left: 15%;
+  left: 20%;
   font-size: 80px;
   color: #ccff00;
   max-width: 40ch;
@@ -90,7 +108,10 @@ export default {};
     transform: scale(1);
   }
 }
-
+.header {
+  margin: 0;
+  border-bottom: 0.25rem solid #ccff00;
+}
 span {
   display: inline-block;
   opacity: 0;
@@ -173,5 +194,8 @@ span:nth-child(18) {
     opacity: 1;
     filter: blur(0);
   }
+}
+.sec2 {
+  background-color: white;
 }
 </style>
