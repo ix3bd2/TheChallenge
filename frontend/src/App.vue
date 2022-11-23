@@ -4,28 +4,33 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <div>
-    <nav-bar/>
-    <left-nav-bar/>
+    <nav-bar />
+    <left-nav-bar />
     <RouterView />
-  </div> 
+          <thefooter />
+
+  </div>
 </template>
 
 <script>
 import NavBar from "./components/Navbar.vue";
 import LeftNavBar from "./components/LeftNavbar.vue";
+import Thefooter from "./components/Thefooter.vue";
+
 export default {
-  components: { NavBar, LeftNavBar },
+  components: { NavBar, LeftNavBar, Thefooter },
   name: "App",
 };
 </script>
 
 <style >
-*, body {
+*,
+body {
   padding: 0;
   margin: 0;
   max-width: 100%;
 }
-body{
+body {
   background-color: #1f1f1f;
 }
 </style>
