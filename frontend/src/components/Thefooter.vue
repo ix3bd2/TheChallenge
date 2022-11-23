@@ -123,6 +123,7 @@ margin-top: 3px;
 
 .footer-distributed .footer-links .footer-a:hover {
   text-decoration: underline;
+  
 }
 
 /* Media Queries */

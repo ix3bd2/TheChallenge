@@ -22,9 +22,9 @@
       </p>
     </div>
     <div class="sec2">
-      <div class="row">
+      <div class="row" style="margin-left:0!important;"> 
         <div class="col-lg-6 col-sm-12"></div>
-        <div class="col-lg-6 col-sm-12">
+        <div class="col-lg-6 col-sm-12" style="padding:0!important;">
           <div class="sec2-img"></div>
         </div>
       </div>
