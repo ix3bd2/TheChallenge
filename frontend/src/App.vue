@@ -25,4 +25,7 @@ export default {
   margin: 0;
   max-width: 100%;
 }
+body{
+  background-color: #1f1f1f;
+}
 </style>
