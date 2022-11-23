@@ -1,6 +1,6 @@
 <template>
-  <div class="homepage">
-    <div class="home-page-main">
+  <div class="aboutus">
+    <div class="aboutus-main">
       <div class="row header" style="max-width: 100%; height: 100vh">
         <div class="col-lg-6 col-sm-12 text-col">
           <h1 class="h1-header">
@@ -22,8 +22,11 @@
       </div>
       <div class="sec2">
         <div class="row" style="margin-left: 0 !important">
+          <div class="col-lg-6 col-sm-12" style="padding: 0 !important">
+            <div class="sec2-img"></div>
+          </div>
           <div class="col-lg-6 col-sm-12">
-            <h1 class="sec2-text">About the project</h1>
+            <h1 class="sec2-text">About us</h1>
             <p class="sec2-p">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -36,9 +39,6 @@
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.
             </p>
-          </div>
-          <div class="col-lg-6 col-sm-12" style="padding: 0 !important">
-            <div class="sec2-img"></div>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@ export default {};
   padding: 30px;
   text-align: center;
 }
-.home-page-main {
+.aboutus-main {
   width: 100%;
   background-image: url(../assets/background.jpeg);
   background-repeat: no-repeat;
@@ -92,9 +92,9 @@ export default {};
   transform: translate(-50%, -50%);
 }
 .sec2-img {
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(100% 0, 100% 0, 85% 100%, 0 100%, 0 0);
   width: 100%;
-  background-image: url(../assets/gym-pic.jpeg);
+  background-image: url(../assets/gym-pic2.jpeg);
   height: 600px;
   background-size: cover;
   background-position: 50%;

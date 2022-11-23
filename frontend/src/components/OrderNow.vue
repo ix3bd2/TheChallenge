@@ -1,6 +1,6 @@
 <template>
-  <div class="homepage">
-    <div class="home-page-main">
+  <div class="ordernow">
+    <div class="ordernow-main">
       <div class="row header" style="max-width: 100%; height: 100vh">
         <div class="col-lg-6 col-sm-12 text-col">
           <h1 class="h1-header">
@@ -66,7 +66,7 @@ export default {};
   padding: 30px;
   text-align: center;
 }
-.home-page-main {
+.ordernow-main {
   width: 100%;
   background-image: url(../assets/background.jpeg);
   background-repeat: no-repeat;
