@@ -69,6 +69,7 @@ export default {};
   height: 50px;
   line-height: 45px;
   border-radius: 50%;
+  z-index: 8;
   rotate: 270deg;
   background-color: black;
   color: #ccff00;
