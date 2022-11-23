@@ -23,7 +23,11 @@
     </div>
     <div class="sec2">
       <div class="row" style="margin-left:0!important;"> 
-        <div class="col-lg-6 col-sm-12"></div>
+        <div class="col-lg-6 col-sm-12">
+          <h1 class="sec2-text">About the project</h1>
+          <p class="sec2-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        </div>
         <div class="col-lg-6 col-sm-12" style="padding:0!important;">
           <div class="sec2-img"></div>
         </div>
@@ -43,6 +47,19 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
+.sec2-text{
+  padding-top: 10%;
+  font-size: 50px!important;
+  text-align: center;
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+  font-weight: bold;
+}
+.sec2-p{
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+  font-size: 20px;
+  padding: 30px;
+  text-align: center;
+}
 .home-page-main {
   width: 100%;
   height: 100vh;
