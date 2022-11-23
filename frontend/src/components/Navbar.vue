@@ -31,26 +31,26 @@ export default {
 
 <style scoped>
     #NavBar {
-        z-index: 1000;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background-color: transparent;
-        transition: .4s
+      z-index: 1000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background-color: transparent;
+      transition: .4s
     }
 
-    .btn {
-        --bs-btn-color: #ccff00;
-        --bs-btn-border-color: #ccff00;
-        --bs-btn-hover-color: #000;
-        --bs-btn-hover-bg: #ccff00;
-        --bs-btn-hover-border-color: #000;
-        --bs-btn-active-color: #000;
-        --bs-btn-active-bg: #ccff00;
-        --bs-btn-active-border-color: #ccff00;
-        --bs-btn-disabled-color: #ccff00;
-        --bs-btn-disabled-border-color: #ccff00;
+    #NavBar .btn {
+      --bs-btn-color: #ccff00;
+      --bs-btn-border-color: #ccff00;
+      --bs-btn-hover-color: #000;
+      --bs-btn-hover-bg: #ccff00;
+      --bs-btn-hover-border-color: #000;
+      --bs-btn-active-color: #000;
+      --bs-btn-active-bg: #ccff00;
+      --bs-btn-active-border-color: #ccff00;
+      --bs-btn-disabled-color: #ccff00;
+      --bs-btn-disabled-border-color: #ccff00;
     }
 </style>

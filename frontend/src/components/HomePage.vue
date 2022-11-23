@@ -108,7 +108,7 @@ export default {
 
 .h1-header {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  font-family: Cambria, Georgia, serif;
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 40%;
