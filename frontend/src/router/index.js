@@ -16,7 +16,79 @@ const router = createRouter({
             // which is lazy-loaded when the route is visited.
             component: () =>
                 import ('../components/HomePage.vue')
-        }
+        },
+        {
+            name: "KlantList",
+            path: "/klants/",
+            component: () =>
+                import ("../components/klant/List.vue"),
+        },
+        {
+            name: "KlantCreate",
+            path: "/klants/create",
+            component: () =>
+                import ("../components/klant/Create.vue"),
+        },
+        {
+            name: "KlantUpdate",
+            path: "/klants/edit/:id",
+            component: () =>
+                import ("../components/klant/Update.vue"),
+        },
+        {
+            name: "KlantShow",
+            path: "/klants/show/:id",
+            component: () =>
+                import ("../components/klant/Show.vue"),
+        },
+        {
+            name: "EnergiebesparingList",
+            path: "/energiebesparings/",
+            component: () =>
+                import ("../components/energiebesparing/List.vue"),
+        },
+        {
+            name: "EnergiebesparingCreate",
+            path: "/energiebesparings/create",
+            component: () =>
+                import ("../components/energiebesparing/Create.vue"),
+        },
+        {
+            name: "EnergiebesparingUpdate",
+            path: "/energiebesparings/edit/:id",
+            component: () =>
+                import ("../components/energiebesparing/Update.vue"),
+        },
+        {
+            name: "EnergiebesparingShow",
+            path: "/energiebesparings/show/:id",
+            component: () =>
+                import ("../components/energiebesparing/Show.vue"),
+        },
+        {
+            name: "MicroBitList",
+            path: "/micro_bits/",
+            component: () =>
+                import ("../components/microbit/List.vue"),
+        },
+        {
+            name: "MicroBitCreate",
+            path: "/micro_bits/create",
+            component: () =>
+                import ("../components/microbit/Create.vue"),
+        },
+        {
+            name: "MicroBitUpdate",
+            path: "/micro_bits/edit/:id",
+            component: () =>
+                import ("../components/microbit/Update.vue"),
+        },
+        {
+            name: "MicroBitShow",
+            path: "/micro_bits/show/:id",
+            component: () =>
+                import ("../components/microbit/Show.vue"),
+        },
     ]
 })
 
