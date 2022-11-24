@@ -1,5 +1,6 @@
 <template>
-  <footer class="footer-distributed">
+<div>
+  <footer class="footer-distributed" id="footer0" v-if="!show">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -34,14 +35,83 @@
 
       <p>Efree &copy; 2022</p>
     </div>
+    
+
+
+
+
+    
   </footer>
+  <footer class="footer-distributed" id="footer1" v-if="show">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <div class="footer-right">
+      <a href=""><i class="fa fa-twitter footer-a"></i></a>
+      <a href=""><i class="fa fa-telegram footer-a"></i></a>
+      <a href=""><i class="fa fa-instagram footer-a"></i></a>
+      <a href=""><i class="fa fa-facebook footer-a"></i></a>
+      <a href=""><i class="fa fa-github footer-a"></i></a>
+      <a href="" class="footer-a"><i class="fa fa-reddit "></i></a>
+    </div>
+
+    <div class="footer-left">
+      <p class="footer-links">
+        <router-link to="/">
+          <a class="link-1">Home&nbsp;</a>
+        </router-link>
+        <router-link to="/About">
+          <a class="link-1" href="/About">About us&nbsp;</a>
+        </router-link>
+        <router-link to="/Order">
+          <a class="link-1">Order now&nbsp;</a>
+        </router-link>
+        <router-link to="/Partner">
+          <a class="link-1">Partner&nbsp;</a>
+        </router-link>
+
+        <!-- <a href="/patreon">Patreon&nbsp;</a> -->
+      </p>
+
+      <p>Efree &copy; 2022</p>
+    </div>
+    
+
+
+
+
+    
+  </footer>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      show: false,
+    };
+  },
+created() {
+    if (window.location.toString().includes("users") ||window.location.toString().includes("klants") ||window.location.toString().includes("micro_bits") || window.location.toString().includes("energiebesparings")) {
+      this.show = true;
+}else{
+  this.show = false;
+}
+      
+  },
+};
 </script>
 
 <style scoped>
+#footer1{
+    background-color: #1f1f1f;
+    position: fixed;
+    bottom: -200;
+    z-index: 15;
+}
 footer{
     background-color: #1f1f1f;
 }

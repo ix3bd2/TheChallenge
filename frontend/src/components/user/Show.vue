@@ -42,20 +42,8 @@
            {{ checkRole(item["roles"]) }}
           </tr>
           <tr>
-            <th scope="row">password</th>
-            <td>{{ item['password'] }}</td>
-          </tr>
-          <tr>
             <th scope="row">email</th>
             <td>{{ item['email'] }}</td>
-          </tr>
-          <tr>
-            <th scope="row">klant</th>
-            <td>{{ item['klant'] }}</td>
-          </tr>
-          <tr>
-            <th scope="row">userIdentifier</th>
-            <td>{{ item['userIdentifier'] }}</td>
           </tr>
         </tbody>
       </table>
@@ -136,14 +124,7 @@ export default {
       reset: 'user/show/reset',
       retrieve: 'user/show/retrieve',
     }),
-
-    del() {
-      if (window.confirm('Are you sure you want to delete this user?')) {
-        this.deleteItem(this.item);
-      }
-    },
-  },
-  checkRole(role) {
+    checkRole(role) {
       if (role[0] == 'ROLE_CUSTOMERS') {
         return "Customer";
       }
@@ -154,6 +135,12 @@ export default {
         return "Super admin";
       }
     },
+    del() {
+      if (window.confirm('Are you sure you want to delete this user?')) {
+        this.deleteItem(this.item);
+      }
+    },
+  },
 };
 </script>
 <style scoped>
