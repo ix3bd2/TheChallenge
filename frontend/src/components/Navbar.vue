@@ -9,6 +9,7 @@ export default {
   created() {
     if (
       window.location.toString().includes("users") ||
+      window.location.toString().includes("dashBoard") ||
       window.location.toString().includes("klants") ||
       window.location.toString().includes("micro_bits") ||
       window.location.toString().includes("energiebesparings")
@@ -94,18 +95,18 @@ export default {
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-4 link-light fw-bold">DashBoard</a></li>
+        <li><a href="/dashBoard" class="nav-link px-4 link-light fw-bold">DashBoard</a></li>
         <li>
-          <a href="#" class="nav-link px-4 link-light fw-bold">Energiebesparing</a>
+          <a href="/energiebesparings" class="nav-link px-4 link-light fw-bold">Energiebesparing</a>
         </li>
         <li>
-          <a href="#" class="nav-link px-4 link-light fw-bold">MicroBit</a>
+          <a href="/micro_bits" class="nav-link px-4 link-light fw-bold">MicroBits</a>
         </li>
         <li>
-          <a href="#" class="nav-link px-4 link-light fw-bold">Klant</a>
+          <a href="/klants" class="nav-link px-4 link-light fw-bold">Klanten</a>
         </li>
         <li>
-          <a href="#" class="nav-link px-4 link-light fw-bold">Gebruikers</a>
+          <a href="/users" class="nav-link px-4 link-light fw-bold">Gebruikers</a>
         </li>
       </ul>
 

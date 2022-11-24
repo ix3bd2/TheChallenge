@@ -95,7 +95,11 @@ export default {
     };
   },
 created() {
-    if (window.location.toString().includes("users") ||window.location.toString().includes("klants") ||window.location.toString().includes("micro_bits") || window.location.toString().includes("energiebesparings")) {
+    if (window.location.toString().includes("/users") ||
+      window.location.toString().includes("/dashBoard") ||
+      window.location.toString().includes("/klants") ||
+      window.location.toString().includes("/micro_bits") ||
+      window.location.toString().includes("/energiebesparings")) {
       this.show = true;
 }else{
   this.show = false;
@@ -109,8 +113,9 @@ created() {
 #footer1{
     background-color: #1f1f1f;
     position: fixed;
-    bottom: -200;
+    bottom: 0;
     z-index: 15;
+    padding: 25px 50px;
 }
 footer{
     background-color: #1f1f1f;
