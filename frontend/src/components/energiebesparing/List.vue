@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="energy-list">
     <h1>Energiebesparing List</h1>
 
     <div
@@ -160,3 +160,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.energy-list{
+  text-align: center;
+  padding-top: 120px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+</style>

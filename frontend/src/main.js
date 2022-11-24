@@ -8,15 +8,18 @@ import router from './router'
 import klant from './store/modules/klant/';
 import energiebesparing from './store/modules/energiebesparing/';
 import microbit from './store/modules/microbit/';
+import user from './store/modules/user/';
 
 export const store = createStore({
     modules: {
         klant,
         energiebesparing,
-        microbit
+        microbit,
+        user
 
     }
 });
+
 const app = createApp(App)
 
 app.use(createPinia())

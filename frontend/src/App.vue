@@ -5,20 +5,17 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div>
     <nav-bar />
-    <left-nav-bar />
     <RouterView />
-          <thefooter />
-
+    <thefooter />
   </div>
 </template>
 
 <script>
 import NavBar from "./components/Navbar.vue";
-import LeftNavBar from "./components/LeftNavbar.vue";
 import Thefooter from "./components/Thefooter.vue";
 
 export default {
-  components: { NavBar, LeftNavBar, Thefooter },
+  components: { NavBar, Thefooter },
   name: "App",
 };
 </script>
@@ -31,6 +28,6 @@ body {
   max-width: 100%;
 }
 body {
-  background-color: #1f1f1f;
+  background-color: rgb(234, 234, 234);
 }
 </style>

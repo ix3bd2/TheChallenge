@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Create Energiebesparing</h1>
+    <h1>Create User</h1>
 
     <div
       v-if="isLoading"
@@ -15,13 +15,13 @@
         aria-hidden="true">{{ error }}</span>
     </div>
 
-    <EnergiebesparingForm
+    <UserForm
       :handle-submit="onSendForm"
       :values="item"
       :errors="violations" />
 
     <router-link
-      :to="{ name: 'EnergiebesparingList' }"
+      :to="{ name: 'UserList' }"
       class="btn btn-default">Back to list</router-link>
   </div>
 </template>
@@ -29,16 +29,16 @@
 <script>
 import { createHelpers } from 'vuex-map-fields';
 import { mapActions } from 'vuex';
-import EnergiebesparingForm from './Form.vue';
+import UserForm from './Form.vue';
 
 const { mapFields } = createHelpers({
-    getterType: 'energiebesparing/create/getField',
-    mutationType: 'energiebesparing/create/updateField',
+    getterType: 'user/create/getField',
+    mutationType: 'user/create/updateField',
 });
 
 export default {
   components: {
-    EnergiebesparingForm,
+    UserForm,
   },
 
   data () {
@@ -63,12 +63,12 @@ export default {
         return;
       }
 
-      this.$router.push({ name: 'EnergiebesparingUpdate', params: { id: created['@id'] } });
+      this.$router.push({ name: 'UserUpdate', params: { id: created['@id'] } });
     }
   },
 
   methods: {
-    ...mapActions('energiebesparing/create', [
+    ...mapActions('user/create', [
       'create',
     ]),
 

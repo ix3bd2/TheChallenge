@@ -45,11 +45,16 @@
         </div>
       </div>
     </div>
+    <left-nav-bar />
   </div>
 </template>
 
 <script>
-export default {};
+import LeftNavBar from "../components/LeftNavbar.vue";
+
+export default {
+  components: { LeftNavBar },
+};
 </script>
 
 <style>

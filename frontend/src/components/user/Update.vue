@@ -31,7 +31,7 @@
         aria-hidden="true">{{ deleteError }}</span>
     </div>
 
-    <EnergiebesparingForm
+    <UserForm
       v-if="item"
       :handle-submit="onSendForm"
       :values="item"
@@ -40,7 +40,7 @@
 
     <router-link
       v-if="item"
-      :to="{ name: 'EnergiebesparingList' }"
+      :to="{ name: 'UserList' }"
       class="btn btn-primary">Back to list</router-link>
     <button
       class="btn btn-danger"
@@ -52,27 +52,27 @@
 import { mapActions } from 'vuex';
 import { mapFields } from 'vuex-map-fields';
 import ItemWatcher from '../../mixins/ItemWatcher';
-import EnergiebesparingForm from './Form.vue';
-import * as types from '../../store/modules/energiebesparing/update/mutation_types';
-import * as delTypes from '../../store/modules/energiebesparing/delete/mutation_types';
+import UserForm from './Form.vue';
+import * as types from '../../store/modules/user/update/mutation_types';
+import * as delTypes from '../../store/modules/user/delete/mutation_types';
 
 export default {
   mixins: [ItemWatcher],
   components: {
-    EnergiebesparingForm,
+    UserForm,
   },
 
   computed: {
-    ...mapFields('energiebesparing/del', {
+    ...mapFields('user/del', {
       deleteError: 'error',
       deleteLoading: 'isLoading',
       deleted: 'deleted',
       mercureDeleted: 'mercureDeleted',
     }),
-    ...mapFields('energiebesparing/create', {
+    ...mapFields('user/create', {
       created: 'created',
     }),
-    ...mapFields('energiebesparing/update', {
+    ...mapFields('user/update', {
       isLoading: 'isLoading',
       error: 'error',
       item: 'retrieved',
@@ -80,8 +80,8 @@ export default {
       updated: 'updated',
       violations: 'violations',
     }),
-    itemUpdateMutation: () => `energiebesparing/update/${types.SET_RETRIEVED}`,
-    itemMercureDeletedMutation: () => `energiebesparing/del/${delTypes.ENERGIEBESPARING_DELETE_MERCURE_SET_DELETED}`,
+    itemUpdateMutation: () => `user/update/${types.SET_RETRIEVED}`,
+    itemMercureDeletedMutation: () => `user/del/${delTypes.USER_DELETE_MERCURE_SET_DELETED}`,
   },
 
   watch: {
@@ -91,7 +91,7 @@ export default {
         return;
       }
 
-      this.$router.push({ name: 'EnergiebesparingList' });
+      this.$router.push({ name: 'UserList' });
     },
     // eslint-disable-next-line object-shorthand,func-names
     mercureDeleted: function(deleted) {
@@ -99,7 +99,7 @@ export default {
         return;
       }
 
-      this.$router.push({ name: 'EnergiebesparingList' });
+      this.$router.push({ name: 'UserList' });
     },
   },
 
@@ -113,17 +113,17 @@ export default {
 
   methods: {
     ...mapActions({
-      createReset: 'energiebesparing/create/reset',
-      deleteItem: 'energiebesparing/del/del',
-      delReset: 'energiebesparing/del/reset',
-      retrieve: 'energiebesparing/update/retrieve',
-      updateReset: 'energiebesparing/update/reset',
-      update: 'energiebesparing/update/update',
-      updateRetrieved: 'energiebesparing/update/updateRetrieved',
+      createReset: 'user/create/reset',
+      deleteItem: 'user/del/del',
+      delReset: 'user/del/reset',
+      retrieve: 'user/update/retrieve',
+      updateReset: 'user/update/reset',
+      update: 'user/update/update',
+      updateRetrieved: 'user/update/updateRetrieved',
     }),
 
     del() {
-      if (window.confirm('Are you sure you want to delete this energiebesparing?')) {
+      if (window.confirm('Are you sure you want to delete this user?')) {
         this.deleteItem(this.item);
       }
     },

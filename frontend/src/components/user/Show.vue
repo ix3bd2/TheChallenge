@@ -34,29 +34,41 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">weekBesparing</th>
-            <td>{{ item['weekBesparing'] }}</td>
+            <th scope="row">username</th>
+            <td>{{ item['username'] }}</td>
           </tr>
           <tr>
-            <th scope="row">datum</th>
-            <td>{{ item['datum'] }}</td>
+            <th scope="row">roles</th>
+            <td>{{ item['roles'] }}</td>
           </tr>
           <tr>
-            <th scope="row">microBit</th>
-            <td>{{ item['microBit'] }}</td>
+            <th scope="row">password</th>
+            <td>{{ item['password'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">email</th>
+            <td>{{ item['email'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">klant</th>
+            <td>{{ item['klant'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">userIdentifier</th>
+            <td>{{ item['userIdentifier'] }}</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <router-link
-      :to="{ name: 'EnergiebesparingList' }"
+      :to="{ name: 'UserList' }"
       class="btn btn-primary">
       Back to list
     </router-link>
     <router-link
       v-if="item"
-      :to="{ name: 'EnergiebesparingUpdate', params: { id: item['@id'] } }"
+      :to="{ name: 'UserUpdate', params: { id: item['@id'] } }"
       class="btn btn-warning">
       Edit
     </router-link>
@@ -70,25 +82,25 @@
 import { mapActions } from 'vuex';
 import { mapFields } from 'vuex-map-fields';
 import ItemWatcher from '../../mixins/ItemWatcher';
-import * as types from '../../store/modules/energiebesparing/show/mutation_types';
-import * as delTypes from '../../store/modules/energiebesparing/delete/mutation_types';
+import * as types from '../../store/modules/user/show/mutation_types';
+import * as delTypes from '../../store/modules/user/delete/mutation_types';
 
 export default {
   mixins: [ItemWatcher],
   computed: {
-    ...mapFields('energiebesparing/del', {
+    ...mapFields('user/del', {
       deleteError: 'error',
       deleted: 'deleted',
       mercureDeleted: 'mercureDeleted',
     }),
-    ...mapFields('energiebesparing/show', {
+    ...mapFields('user/show', {
       error: 'error',
       isLoading: 'isLoading',
       item: 'retrieved',
       hubUrl: 'hubUrl',
     }),
-    itemUpdateMutation: () =>`energiebesparing/show/${types.ENERGIEBESPARING_SHOW_SET_RETRIEVED}`,
-    itemMercureDeletedMutation: () => `energiebesparing/del/${delTypes.ENERGIEBESPARING_DELETE_MERCURE_SET_DELETED}`,
+    itemUpdateMutation: () =>`user/show/${types.USER_SHOW_SET_RETRIEVED}`,
+    itemMercureDeletedMutation: () => `user/del/${delTypes.USER_DELETE_MERCURE_SET_DELETED}`,
   },
 
   watch: {
@@ -98,7 +110,7 @@ export default {
         return;
       }
 
-      this.$router.push({ name: 'EnergiebesparingList' });
+      this.$router.push({ name: 'UserList' });
     },
     // eslint-disable-next-line object-shorthand,func-names
     mercureDeleted: function(deleted) {
@@ -106,7 +118,7 @@ export default {
         return;
       }
 
-      this.$router.push({ name: 'EnergiebesparingList' });
+      this.$router.push({ name: 'UserList' });
     },
   },
 
@@ -120,13 +132,13 @@ export default {
 
   methods: {
     ...mapActions({
-      deleteItem: 'energiebesparing/del/del',
-      reset: 'energiebesparing/show/reset',
-      retrieve: 'energiebesparing/show/retrieve',
+      deleteItem: 'user/del/del',
+      reset: 'user/show/reset',
+      retrieve: 'user/show/retrieve',
     }),
 
     del() {
-      if (window.confirm('Are you sure you want to delete this energiebesparing?')) {
+      if (window.confirm('Are you sure you want to delete this user?')) {
         this.deleteItem(this.item);
       }
     },

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="Micro-bit">
     <h1>MicroBit List</h1>
 
     <div
@@ -175,3 +175,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.Micro-bit{
+  text-align: center;
+  padding-top: 120px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+</style>

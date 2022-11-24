@@ -145,3 +145,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+div{
+  text-align: center;
+  padding-top: 120px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+</style>

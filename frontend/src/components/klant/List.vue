@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="klant-list">
     <h1>Klant List</h1>
 
     <div
@@ -71,11 +71,6 @@
                   {{ link['@id'] }}
                 </router-link>
               </div>
-              <router-link
-                v-else
-                :to="{ name: 'MicroBitShow', params: { id: item['micro_bits'] } }">
-                {{ item['micro_bits'] }}
-              </router-link>
             </template>
         </td>
           <td>
@@ -172,3 +167,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.klant-list{
+  text-align: center;
+  padding-top: 120px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+</style>
