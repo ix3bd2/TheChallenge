@@ -30,4 +30,8 @@ body {
 body {
   background-color: rgb(234, 234, 234);
 }
+.btn{
+  margin-top: 10px;
+  margin-right: 10px;
+}
 </style>

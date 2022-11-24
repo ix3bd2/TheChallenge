@@ -11,6 +11,7 @@
         ]"
         type="text"
         placeholder=""
+        required
       />
       <div v-if="!isValid('username')" class="invalid-feedback">
         {{ violations.username }}
@@ -31,7 +32,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="user_password" class="form-control-label">password</label>
+      <label for="user_password"  class="form-control-label">password</label>
       <input
         id="user_password"
         v-model="item.password"
@@ -39,8 +40,8 @@
           'form-control',
           !isValid('password') ? 'is-invalid' : 'is-valid',
         ]"
-        type="text"
-        placeholder="The hashed password"
+        type="password"
+        required
       />
       <div v-if="!isValid('password')" class="invalid-feedback">
         {{ violations.password }}
@@ -54,6 +55,7 @@
         :class="['form-control', !isValid('email') ? 'is-invalid' : 'is-valid']"
         type="text"
         placeholder=""
+        required
       />
       <div v-if="!isValid('email')" class="invalid-feedback">
         {{ violations.email }}

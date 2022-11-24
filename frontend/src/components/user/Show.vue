@@ -39,7 +39,7 @@
           </tr>
           <tr>
             <th scope="row">roles</th>
-            <td>{{ item['roles'] }}</td>
+           {{ checkRole(item["roles"]) }}
           </tr>
           <tr>
             <th scope="row">password</th>
@@ -143,6 +143,17 @@ export default {
       }
     },
   },
+  checkRole(role) {
+      if (role[0] == 'ROLE_CUSTOMERS') {
+        return "Customer";
+      }
+      if (role [0]== 'ROLE_EMPLOYEE') {
+        return "Employee";
+      }
+      if (role[0] == 'ROLE_SUPERADMIN') {
+        return "Super admin";
+      }
+    },
 };
 </script>
 <style scoped>

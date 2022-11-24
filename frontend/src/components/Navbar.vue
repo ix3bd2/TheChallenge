@@ -42,6 +42,7 @@ export default {
     }
 
     .btn {
+      margin: 0 !important;
         --bs-btn-color: #ccff00;
         --bs-btn-border-color: #ccff00;
         --bs-btn-hover-color: #000;
