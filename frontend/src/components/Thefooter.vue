@@ -111,11 +111,7 @@ created() {
 
 <style scoped>
 #footer1{
-    background-color: #1f1f1f;
-    position: fixed;
-    bottom: 0;
-    z-index: 15;
-    padding: 25px 50px;
+    display: none;
 }
 footer{
     background-color: #1f1f1f;

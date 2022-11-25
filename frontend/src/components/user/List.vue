@@ -72,7 +72,6 @@
         </tr>
       </tbody>
     </table>
-
         <pagination v-if="view" :view="view" @previous="getPage" @next="getPage" />
   </div>
 </template>
