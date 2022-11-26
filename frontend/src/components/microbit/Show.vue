@@ -45,6 +45,14 @@
             <th scope="row">energiebesparing</th>
             <td>{{ item['energiebesparing'] }}</td>
           </tr>
+          <tr>
+            <th scope="row">energieJaar</th>
+            <td>{{ item['energieJaar'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">status</th>
+            <td>{{ item['status'] }}</td>
+          </tr>
         </tbody>
       </table>
     </div>

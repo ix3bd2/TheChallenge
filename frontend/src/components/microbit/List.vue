@@ -1,5 +1,5 @@
 <template>
-  <div class="Micro-bit">
+  <div class="microbit-list">
     <h1>MicroBit List</h1>
 
     <div
@@ -27,7 +27,8 @@
           <th>id</th>
           <th>apparaat</th>
           <th>klant</th>
-          <th>energiebesparing</th>
+          <th>energieJaar</th>
+          <th>status</th>
           <th colspan="2"></th>
         </tr>
       </thead>
@@ -62,24 +63,12 @@
                 {{ item['klants'] }}
               </router-link>
             </template>
+        </td>        
+        <td>
+            {{ item['energieJaar'] }}
         </td>
         <td>
-            <template>
-              <div
-                v-if="Array.isArray(item['energiebesparings'])">
-                <router-link
-                  v-for="link in item['energiebesparings']"
-                  :key="link['@id']"
-                  :to="{ name: 'EnergiebesparingShow', params: { id: link['@id'] } }">
-                  {{ link['@id'] }}
-                </router-link>
-              </div>
-              <router-link
-                v-else
-                :to="{ name: 'EnergiebesparingShow', params: { id: item['energiebesparings'] } }">
-                {{ item['energiebesparings'] }}
-              </router-link>
-            </template>
+            {{ item['status'] }}
         </td>
           <td>
             <router-link
@@ -175,9 +164,8 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-.Micro-bit{
+.microbit-list{
   text-align: center;
   padding-top: 120px;
   padding-left: 10%;

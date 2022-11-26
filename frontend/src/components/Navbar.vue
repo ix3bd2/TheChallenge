@@ -96,9 +96,9 @@ export default {
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="/dashBoard" class="nav-link px-4 link-light fw-bold">DashBoard</a></li>
-        <li>
+        <!-- <li>
           <a href="/energiebesparings" class="nav-link px-4 link-light fw-bold">Energiebesparing</a>
-        </li>
+        </li> -->
         <li>
           <a href="/micro_bits" class="nav-link px-4 link-light fw-bold">MicroBits</a>
         </li>

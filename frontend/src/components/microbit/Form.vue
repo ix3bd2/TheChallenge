@@ -35,22 +35,31 @@
     </div>
     <div class="form-group">
       <label
-        for="microbit_energiebesparing"
-        class="form-control-label">energiebesparing</label>
-        <select
-          v-model="item.energiebesparing"
-          id="microbit_energiebesparing"
-          class="form-control"
-        >
-          <option v-for="selectItem in energiebesparingSelectItems"
-                  :key="selectItem['@id']"
-                  :value="selectItem['@id']"
-                  :selected="isSelected('energiebesparing', selectItem['@id'])">{{ selectItem.name }}
-          </option>
-        </select>
+        for="microbit_energieJaar"
+        class="form-control-label">energieJaar</label>
+        <input
+          id="microbit_energieJaar"
+          v-model="item.energieJaar"
+          :class="['form-control', !isValid('energieJaar') ? 'is-invalid' : 'is-valid']"
+          type="text"
+          placeholder="">
       <div
-        v-if="!isValid('energiebesparing')"
-        class="invalid-feedback">{{ violations.energiebesparing }}</div>
+        v-if="!isValid('energieJaar')"
+        class="invalid-feedback">{{ violations.energieJaar }}</div>
+    </div>
+    <div class="form-group">
+      <label
+        for="microbit_status"
+        class="form-control-label">status</label>
+        <input
+          id="microbit_status"
+          v-model="item.status"
+          :class="['form-control', !isValid('status') ? 'is-invalid' : 'is-valid']"
+          type="checkbox"
+          placeholder="">
+      <div
+        v-if="!isValid('status')"
+        class="invalid-feedback">{{ violations.status }}</div>
     </div>
 
     <button
@@ -61,8 +70,8 @@
 
 <script>
   import { find, get, isUndefined } from 'lodash';
-    import { mapFields } from 'vuex-map-fields';
   import { mapActions } from 'vuex';
+import { mapFields } from "vuex-map-fields";
 
   export default {
   props: {
