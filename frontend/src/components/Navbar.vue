@@ -63,9 +63,11 @@ export default {
       </ul>
 
       <div class="col-md-3 text-end">
+        <a href="/login">
         <button type="button" class="btn btn-outline-primary me-2 fw-bold">
           Login
         </button>
+        </a>
       </div>
     </header>
     <header

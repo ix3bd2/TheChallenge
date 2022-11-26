@@ -9,6 +9,8 @@ import klant from './store/modules/klant/';
 import energiebesparing from './store/modules/energiebesparing/';
 import microbit from './store/modules/microbit/';
 import user from './store/modules/user/';
+import Particles from "vue3-particles";
+
 
 export const store = createStore({
     modules: {
@@ -24,5 +26,6 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(Particles)
 app.use(store)
 app.mount('#app')
