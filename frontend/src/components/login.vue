@@ -125,6 +125,7 @@ canvas {
 
 .space-nebula__wrapper {
   opacity: 0.08;
+filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%) contrast(105%);
 }
 
 @-webkit-keyframes space-nebula-scroll-small {
@@ -296,7 +297,7 @@ canvas {
   border-radius: 50%;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0px 15px 20px rgba(255, 10, 10, 0.1), 0px 1px rgba(255, 50, 50, 0.18);
+  box-shadow: 0px 15px 20px #ccff0034, 0px 1px #ccff0026;
   -webkit-animation: orb-mover 8s linear infinite;
           animation: orb-mover 8s linear infinite;
 }
@@ -321,6 +322,7 @@ canvas {
 .orb__texture {
   position: absolute;
   height: 100%;
+  filter:invert(60%) sepia(68%) saturate(1291%) hue-rotate(26deg) brightness(105%) contrast(105%);
   width: 100%;
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/350480/planet_bg_base.svg");
   background-size: 800px 400px;
