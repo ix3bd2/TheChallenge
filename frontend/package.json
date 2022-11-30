@@ -8,9 +8,20 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "add": "^2.0.6",
+    "axios": "^1.2.0",
+    "bootstrap": "^5.2.3",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.21",
+    "particles.vue": "^3.5.3",
+    "particles.vue3": "^2.5.3",
     "pinia": "^2.0.23",
+    "tsparticles": "^2.5.3",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.5",
+    "vue3-particles": "^2.5.3",
+    "vuex": "^4.1.0",
+    "vuex-map-fields": "^1.4.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
