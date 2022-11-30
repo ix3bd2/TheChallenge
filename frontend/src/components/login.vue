@@ -11,6 +11,9 @@
       <input type="password" name="" required="" v-model="posts.password">
       <label>Password</label>
     </div>
+    <div v-if="errorMsg" class="ErrorMsg" style="color: red">
+        {{ errorMsg }}
+      </div>
     <a type="submit" href="#" v-on:click.prevent="postData">
       <span></span>
       <span></span>
@@ -108,7 +111,7 @@ export default {
           window.location.href = "/klants";
         },
         (error) => {
-          this.errorMsg = error.response.data.message;
+          this.errorMsg = "incorrect username or password";
         }
       );
     },
