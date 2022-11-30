@@ -2,16 +2,16 @@
 <div>
   <div class="login-box">
   <h2>Login</h2>
-  <form>
+  <form  method="post">
     <div class="user-box">
-      <input type="text" name="" required="">
+      <input type="text" name="" required="" v-model="posts.username">
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="">
+      <input type="password" name="" required="" v-model="posts.password">
       <label>Password</label>
     </div>
-    <a href="#">
+    <a type="submit" href="#" v-on:click.prevent="postData">
       <span></span>
       <span></span>
       <span></span>
@@ -80,12 +80,40 @@
 </template>
 
 <script>
-
-
-
+import axios from "axios";
+import { ENTRYPOINT } from "../config/entrypoint";
 export default {
-
-}
+  name: "Login",
+  data() {
+    return {
+      errorMsg: null,
+      posts: {
+        username: null,
+        password: null,
+      },
+    };
+  },
+  methods: {
+    /* accessCheck() {
+      if (sessionStorage.getItem("token") != null) {
+        window.location.href = "/appointments";
+      } else {
+        return true;
+      }
+    }, */
+    postData() {
+      axios.post("https://127.0.0.1:8000/authentication_token", this.posts).then(
+        (response) => {
+          sessionStorage.setItem("token", response.data.token);
+          window.location.href = "/klants";
+        },
+        (error) => {
+          this.errorMsg = error.response.data.message;
+        }
+      );
+    },
+  },
+};
 </script>
 
 <style scoped>
