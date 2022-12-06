@@ -48,9 +48,11 @@
         {{ violations.kosten }}
       </div>
     </div>
-   
+
     <div class="form-group">
-      <label for="klant_startdatum" class="form-control-label">Startdatum</label>
+      <label for="klant_startdatum" class="form-control-label"
+        >Startdatum</label
+      >
       <input
         id="klant_startdatum"
         v-model="item.startdatum"
@@ -62,17 +64,25 @@
         placeholder
         required
       />
-    <div class="form-group">
-      <label for="appointments_resources" class="form-control-label">User</label>
-      <select v-model="item.user" id="appointments_resources" class="form-control">
-        <option
-          v-for="usersel in users"
-          :key="usersel['@id']"
-          :value="usersel['@id']"
-        >{{ usersel.username }}</option>
-      </select>
-      <P>Graag geen user selecteren bij het Wijzigen van data</P>
-    </div>
+      <div class="form-group">
+        <label for="appointments_resources" class="form-control-label"
+          >User</label
+        >
+        <select
+          v-model="item.user"
+          id="appointments_resources"
+          class="form-control"
+        >
+          <option
+            v-for="usersel in filtered"
+            :key="usersel['@id']"
+            :value="usersel['@id']"
+          >
+            <i>{{ usersel.username }}</i>
+          </option>
+        </select>
+        <P>Graag geen user selecteren bij het Wijzigen van data</P>
+      </div>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
@@ -87,7 +97,8 @@ import { ENTRYPOINT } from "../../config/entrypoint";
 export default {
   data() {
     return {
-      users:null
+      users: null,
+      filtered: [],
     };
   },
   props: {
@@ -116,7 +127,13 @@ export default {
       ENTRYPOINT + "users/" + "?pagination=false"
     );
     this.users = usersdata.data["hydra:member"];
-    console.log(this.users)
+    console.log(this.users);
+    for (const user  in this.users) {
+        if(!Object.keys(this.users[user]).includes('klant')){
+          this.filtered.push(this.users[user])
+        }
+}
+
   },
 
   mounted() {
@@ -151,5 +168,6 @@ export default {
       return isUndefined(get(this.violations, key));
     },
   },
+
 };
 </script>

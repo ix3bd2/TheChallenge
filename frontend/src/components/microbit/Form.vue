@@ -72,8 +72,14 @@
   import { find, get, isUndefined } from 'lodash';
   import { mapActions } from 'vuex';
 import { mapFields } from "vuex-map-fields";
-
+import axios from "axios";
+import { ENTRYPOINT } from "../../config/entrypoint";
   export default {
+    data() {
+    return {
+      klanten:null
+    };
+  },
   props: {
     handleSubmit: {
       type: Function,
@@ -95,7 +101,13 @@ import { mapFields } from "vuex-map-fields";
       default: () => {},
     }
   },
-
+ async created() {
+    const klantsdata = await axios.get(
+      ENTRYPOINT + "klants/" + "?pagination=false"
+    );
+    this.klanten = klantsdata.data["hydra:member"];
+    console.log(this.klant)
+  },
   mounted() {
     this.klantGetSelectItems();
     this.energiebesparingGetSelectItems();
