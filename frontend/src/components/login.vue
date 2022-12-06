@@ -763,7 +763,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   font-size: 16px;
   color: #fff;
   pointer-events: none;
-  transition: .5s;
+  transition: .1s;
 }
 
 .login-box .user-box input:focus ~ label,
@@ -809,7 +809,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, transparent, #ccff00);
-  animation: btn-anim1 1s linear infinite;
+  animation: btn-anim1 3s linear infinite;
 }
 
 @keyframes btn-anim1 {
@@ -827,7 +827,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   width: 2px;
   height: 100%;
   background: linear-gradient(180deg, transparent, #ccff00);
-  animation: btn-anim2 1s linear infinite;
+  animation: btn-anim2 3s linear infinite;
   animation-delay: .25s
 }
 
@@ -846,7 +846,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   width: 100%;
   height: 2px;
   background: linear-gradient(270deg, transparent, #ccff00);
-  animation: btn-anim3 1s linear infinite;
+  animation: btn-anim3 3s linear infinite;
   animation-delay: .5s
 }
 
@@ -865,7 +865,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   width: 2px;
   height: 100%;
   background: linear-gradient(360deg, transparent, #ccff00);
-  animation: btn-anim4 1s linear infinite;
+  animation: btn-anim4 3s linear infinite;
   animation-delay: .75s
 }
 
