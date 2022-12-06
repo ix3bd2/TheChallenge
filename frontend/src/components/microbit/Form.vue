@@ -26,40 +26,22 @@
           <option v-for="selectItem in klantSelectItems"
                   :key="selectItem['@id']"
                   :value="selectItem['@id']"
-                  :selected="isSelected('klant', selectItem['@id'])">{{ selectItem.name }}
+                  :selected="isSelected('klant', selectItem['@id'])">{{ selectItem.user.username }}
           </option>
         </select>
       <div
         v-if="!isValid('klant')"
         class="invalid-feedback">{{ violations.klant }}</div>
     </div>
-    <div class="form-group">
-      <label
-        for="microbit_energieJaar"
-        class="form-control-label">energieJaar</label>
-        <input
-          id="microbit_energieJaar"
-          v-model="item.energieJaar"
-          :class="['form-control', !isValid('energieJaar') ? 'is-invalid' : 'is-valid']"
-          type="text"
-          placeholder="">
-      <div
-        v-if="!isValid('energieJaar')"
-        class="invalid-feedback">{{ violations.energieJaar }}</div>
-    </div>
+
     <div class="form-group">
       <label
         for="microbit_status"
         class="form-control-label">status</label>
-        <input
-          id="microbit_status"
-          v-model="item.status"
-          :class="['form-control', !isValid('status') ? 'is-invalid' : 'is-valid']"
-          type="checkbox"
-          placeholder="">
-      <div
-        v-if="!isValid('status')"
-        class="invalid-feedback">{{ violations.status }}</div>
+        <select v-model="item.status" id="microbit_status" class="form-control">
+        <option :value=true>Intact</option>
+        <option :value=false>Defect</option>
+      </select>
     </div>
 
     <button
@@ -106,7 +88,7 @@ import { ENTRYPOINT } from "../../config/entrypoint";
       ENTRYPOINT + "klants/" + "?pagination=false"
     );
     this.klanten = klantsdata.data["hydra:member"];
-    console.log(this.klant)
+    console.log(this.klanten)
   },
   mounted() {
     this.klantGetSelectItems();
