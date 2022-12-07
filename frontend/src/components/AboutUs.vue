@@ -26,7 +26,7 @@
             <div class="sec2-img"></div>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <h1 class="sec2-text">About us</h1>
+            <h1 class="sec2-text">Wie zijn wij?</h1>
             <p class="sec2-p">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -68,7 +68,7 @@ export default {};
 }
 .aboutus-main {
   width: 100%;
-  background-image: url(../assets/background.jpeg);
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/The_Hague_University_of_Applied_Sciences_20.jpg/1200px-The_Hague_University_of_Applied_Sciences_20.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -68,7 +68,7 @@
         <router-link to="/Order">
           <a class="link-1">Order now&nbsp;</a>
         </router-link>
-        <router-link to="/Partner">
+        <router-link to="/Partners">
           <a class="link-1">Partner&nbsp;</a>
         </router-link>
 
