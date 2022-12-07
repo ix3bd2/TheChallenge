@@ -12,7 +12,7 @@
       <a href=""><i class="fa fa-instagram footer-a"></i></a>
       <a href=""><i class="fa fa-facebook footer-a"></i></a>
       <a href=""><i class="fa fa-github footer-a"></i></a>
-      <a href="" class="footer-a"><i class="fa fa-reddit "></i></a>
+      <a href=""><i class="fa fa-reddit footer-a"></i></a>
     </div>
 
     <div class="footer-left">
