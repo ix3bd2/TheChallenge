@@ -27,6 +27,33 @@ const router = createRouter({
                 import ('../components/login.vue')
         },
         {
+            path: '/aboutus',
+            name: 'aboutus',
+            // route level code-splitting
+            // this generates a separate chunk (About.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () =>
+                import ('../components/Aboutus.vue')
+        },
+        {
+            path: '/order',
+            name: 'ordernow',
+            // route level code-splitting
+            // this generates a separate chunk (About.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () =>
+                import ('../components/OrderNow.vue')
+        },
+        {
+            path: '/partners',
+            name: 'partners',
+            // route level code-splitting
+            // this generates a separate chunk (About.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () =>
+                import ('../components/Partners.vue')
+        },
+        {
             name: "KlantList",
             path: "/klants/",
             component: () =>

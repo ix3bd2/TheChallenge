@@ -47,28 +47,15 @@
             {{ item['apparaat'] }}
         </td>
         <td>
-            <template>
-              <div
-                v-if="Array.isArray(item['klants'])">
-                <router-link
-                  v-for="link in item['klants']"
-                  :key="link['@id']"
-                  :to="{ name: 'KlantShow', params: { id: link['@id'] } }">
-                  {{ link['@id'] }}
-                </router-link>
-              </div>
-              <router-link
-                v-else
-                :to="{ name: 'KlantShow', params: { id: item['klants'] } }">
-                {{ item['klants'] }}
-              </router-link>
-            </template>
+            {{item.klant.user.username}}
+
         </td>        
         <td>
             {{ item['energieJaar'] }}
         </td>
         <td>
-            {{ item['status'] }}
+            <div v-if="item['status']"><span class="badge text-bg-success">Intact</span></div>
+            <div v-if="!item['status']"><span class="badge text-bg-danger">Defect</span></div>
         </td>
           <td>
             <router-link
@@ -90,44 +77,12 @@
         </tr>
       </tbody>
     </table>
-
-    <nav aria-label="Page navigation" v-if="view">
-      <router-link
-        :to="view['hydra:first'] ? view['hydra:first'] : 'MicroBitContactList'"
-        :class="{ disabled: !view['hydra:previous'] }"
-        class="btn btn-primary"
-        aria-label="First page">
-        <span aria-hidden="true">&lArr;</span> First
-      </router-link>
-      &nbsp;
-      <router-link
-        :to="!view['hydra:previous'] || view['hydra:previous'] === view['hydra:first'] ? 'MicroBitList' : view['hydra:previous']"
-        :class="{ disabled: !view['hydra:previous'] }"
-        class="btn btn-primary"
-        aria-label="Previous page">
-        <span aria-hidden="true">&larr;</span> Previous
-      </router-link>
-
-      <router-link
-        :to="view['hydra:next'] ? view['hydra:next'] : '#'"
-        :class="{ disabled: !view['hydra:next'] }"
-        class="btn btn-primary"
-        aria-label="Next page">
-        Next <span aria-hidden="true">&rarr;</span>
-      </router-link>
-
-      <router-link
-        :to="view['hydra:last'] ? view['hydra:last'] : '#'"
-        :class="{ disabled: !view['hydra:next'] }"
-        class="btn btn-primary"
-        aria-label="Last page">
-        Last <span aria-hidden="true">&rArr;</span>
-      </router-link>
-    </nav>
+       <pagination v-if="view" :view="view" @previous="getPage" @next="getPage" />
   </div>
 </template>
 
 <script>
+import pagination from "../pagination.vue";
 import { mapActions } from 'vuex';
 import { mapFields } from 'vuex-map-fields';
 import ListWatcher from '../../mixins/ListWatcher';
@@ -136,6 +91,7 @@ import * as delTypes from '../../store/modules/microbit/delete/mutation_types';
 
 export default {
   mixins: [ListWatcher],
+    components: { pagination },
   computed: {
       ...mapFields('microbit/del', {
           deletedItem: 'deleted',

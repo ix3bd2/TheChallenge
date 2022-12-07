@@ -2,16 +2,19 @@
 <div>
   <div class="login-box">
   <h2>Login</h2>
-  <form>
+  <form  method="post">
     <div class="user-box">
-      <input type="text" name="" required="">
+      <input type="text" name="" required="" v-model="posts.username">
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="">
+      <input type="password" name="" required="" v-model="posts.password">
       <label>Password</label>
     </div>
-    <a href="#">
+    <div v-if="errorMsg" class="ErrorMsg" style="color: red">
+        {{ errorMsg }}
+      </div>
+    <a type="submit" href="#" v-on:click.prevent="postData">
       <span></span>
       <span></span>
       <span></span>
@@ -80,12 +83,40 @@
 </template>
 
 <script>
-
-
-
+import axios from "axios";
+import { ENTRYPOINT } from "../config/entrypoint";
 export default {
-
-}
+  name: "Login",
+  data() {
+    return {
+      errorMsg: null,
+      posts: {
+        username: null,
+        password: null,
+      },
+    };
+  },
+  methods: {
+    /* accessCheck() {
+      if (sessionStorage.getItem("token") != null) {
+        window.location.href = "/appointments";
+      } else {
+        return true;
+      }
+    }, */
+    postData() {
+      axios.post("https://127.0.0.1:8000/authentication_token", this.posts).then(
+        (response) => {
+          sessionStorage.setItem("token", response.data.token);
+          window.location.href = "/klants";
+        },
+        (error) => {
+          this.errorMsg = "incorrect username or password";
+        }
+      );
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -732,7 +763,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   font-size: 16px;
   color: #fff;
   pointer-events: none;
-  transition: .5s;
+  transition: .1s;
 }
 
 .login-box .user-box input:focus ~ label,
@@ -778,7 +809,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, transparent, #ccff00);
-  animation: btn-anim1 1s linear infinite;
+  animation: btn-anim1 3s linear infinite;
 }
 
 @keyframes btn-anim1 {
@@ -796,7 +827,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   width: 2px;
   height: 100%;
   background: linear-gradient(180deg, transparent, #ccff00);
-  animation: btn-anim2 1s linear infinite;
+  animation: btn-anim2 3s linear infinite;
   animation-delay: .25s
 }
 
@@ -815,7 +846,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   width: 100%;
   height: 2px;
   background: linear-gradient(270deg, transparent, #ccff00);
-  animation: btn-anim3 1s linear infinite;
+  animation: btn-anim3 3s linear infinite;
   animation-delay: .5s
 }
 
@@ -834,7 +865,7 @@ filter: invert(54%) sepia(62%) saturate(1291%) hue-rotate(16deg) brightness(105%
   width: 2px;
   height: 100%;
   background: linear-gradient(360deg, transparent, #ccff00);
-  animation: btn-anim4 1s linear infinite;
+  animation: btn-anim4 3s linear infinite;
   animation-delay: .75s
 }
 

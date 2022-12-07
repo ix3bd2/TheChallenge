@@ -31,9 +31,9 @@ export default {
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="/" class="nav-link px-4 link-light fw-bold">Home</a></li>
-        <li><a href="#" class="nav-link px-4 link-light fw-bold">About us</a></li>
-        <li><a href="#" class="nav-link px-4 link-light fw-bold">Order now</a></li>
-        <li><a href="#" class="nav-link px-4 link-light fw-bold">Partners</a></li>
+        <li><a href="/aboutus" class="nav-link px-4 link-light fw-bold">About us</a></li>
+        <li><a href="/order" class="nav-link px-4 link-light fw-bold">Order now</a></li>
+        <li><a href="/partners" class="nav-link px-4 link-light fw-bold">Partners</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
