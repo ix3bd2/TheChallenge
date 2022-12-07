@@ -9,7 +9,7 @@ export default {
   created() {
     if (
       window.location.toString().includes("users") ||
-      window.location.toString().includes("dashBoard") ||
+      window.location.toString().includes("dashboard") ||
       window.location.toString().includes("klants") ||
       window.location.toString().includes("micro_bits") ||
       window.location.toString().includes("energiebesparings")
@@ -19,6 +19,14 @@ export default {
       this.show = false;
     }
   },
+  methods: {
+    logout(){
+       sessionStorage.removeItem("token");
+       window.location.href = "/";
+
+    }
+
+  }
 };
 </script>
 
@@ -84,7 +92,6 @@ export default {
       "
     >
       <a
-        href="/"
         class="
           d-flex
           align-items-center
@@ -97,7 +104,7 @@ export default {
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="/dashBoard" class="nav-link px-4 link-light fw-bold">DashBoard</a></li>
+        <li><a href="/dashboard" class="nav-link px-4 link-light fw-bold">DashBoard</a></li>
         <!-- <li>
           <a href="/energiebesparings" class="nav-link px-4 link-light fw-bold">Energiebesparing</a>
         </li> -->
@@ -113,7 +120,7 @@ export default {
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-danger me-2 fw-bold">
+        <button type="button" v-on:click="logout()" class="btn btn-outline-danger me-2 fw-bold">
           Logout
         </button>
       </div>

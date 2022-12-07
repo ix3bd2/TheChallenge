@@ -17,6 +17,20 @@ import Thefooter from "./components/Thefooter.vue";
 export default {
   components: { NavBar, Thefooter },
   name: "App",
+    created() {
+     if(!sessionStorage.getItem("token")){
+      if(window.location.toString().includes("users") ||
+      window.location.toString().includes("dashBoard") ||
+      window.location.toString().includes("klants") ||
+      window.location.toString().includes("micro_bits")){
+          window.location.href= "/"
+    } else {
+            console.log('ssd') 
+
+    }
+     }
+   
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage">
+  <div class="homepage" v-if="accessCheck()">
     <div class="home-page-main">
       <div class="row header" style="max-width: 100%; height: 100vh">
         <div class="col-lg-6 col-sm-12 text-col">
@@ -54,6 +54,15 @@ import LeftNavBar from "../components/LeftNavbar.vue";
 
 export default {
   components: { LeftNavBar },
+  methods: {
+     accessCheck() {
+      if (sessionStorage.getItem("token")) {
+        window.location.href = "/dashboard";
+      } else {
+        return true;
+      }
+    }, 
+  }
 };
 </script>
 

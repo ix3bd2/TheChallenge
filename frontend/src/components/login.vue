@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="login-box">
+  <div class="login-box" v-if="accessCheck()">
   <h2>Login</h2>
   <form  method="post">
     <div class="user-box">
@@ -97,18 +97,18 @@ export default {
     };
   },
   methods: {
-    /* accessCheck() {
+     accessCheck() {
       if (sessionStorage.getItem("token") != null) {
-        window.location.href = "/appointments";
+        window.location.href = "/dashboard";
       } else {
         return true;
       }
-    }, */
+    }, 
     postData() {
       axios.post("https://127.0.0.1:8000/authentication_token", this.posts).then(
         (response) => {
           sessionStorage.setItem("token", response.data.token);
-          window.location.href = "/klants";
+          window.location.href = "/dashboard";
         },
         (error) => {
           this.errorMsg = "incorrect username or password";

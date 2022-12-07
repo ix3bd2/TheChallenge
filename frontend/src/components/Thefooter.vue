@@ -96,7 +96,7 @@ export default {
   },
 created() {
     if (window.location.toString().includes("/users") ||
-      window.location.toString().includes("/dashBoard") ||
+      window.location.toString().includes("/dashboard") ||
       window.location.toString().includes("/klants") ||
       window.location.toString().includes("/login") ||
       window.location.toString().includes("/micro_bits") ||
