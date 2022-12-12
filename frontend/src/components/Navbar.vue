@@ -81,7 +81,7 @@ export default {
     <header
     v-if="show"
     style="background-color:black!important"
-      id="NavBar"
+      id="NavBar1"
       class="
         d-flex
         flex-wrap
@@ -139,7 +139,16 @@ export default {
   background-color: transparent;
   transition: 0.4s;
 }
-
+#NavBar1 {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  transition: 0.4s;
+}
 .btn-outline-primary {
   margin: 0 !important;
   --bs-btn-color: #ccff00;
