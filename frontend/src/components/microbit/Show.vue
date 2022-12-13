@@ -46,7 +46,7 @@
             <td>{{ item['energiebesparing'] }}</td>
           </tr>
           <tr>
-            <th scope="row">energieJaar</th>
+            <th scope="row">energie</th>
             <td>{{ item['energieJaar'] }}</td>
           </tr>
           <tr>

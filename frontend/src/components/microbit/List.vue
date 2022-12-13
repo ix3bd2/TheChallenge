@@ -27,7 +27,7 @@
           <th>id</th>
           <th>apparaat</th>
           <th>klant</th>
-          <th>energieJaar</th>
+          <th>energie</th>
           <th>status</th>
           <th colspan="2"></th>
         </tr>
@@ -46,10 +46,13 @@
         <td>
             {{ item['apparaat'] }}
         </td>
-        <td>
+        <td v-if="Object.keys(item).length === 7">
             {{item.klant.user.username}}
+        </td>  
+            <td v-if="Object.keys(item).length === 6">
+            Deleted User
 
-        </td>        
+        </td>   
         <td>
             {{ item['energieJaar'] }}
         </td>

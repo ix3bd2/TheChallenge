@@ -10,7 +10,13 @@ export const reset = ({ commit }) => {
 export const retrieve = ({ commit }, id) => {
     commit(types.TOGGLE_LOADING);
 
-    return fetch(id)
+    return fetch(id, {
+            method: "GET",
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${sessionStorage.getItem("token")}`,
+            }),
+        })
         .then((response) =>
             response.json().then((data) => ({
                 data,
