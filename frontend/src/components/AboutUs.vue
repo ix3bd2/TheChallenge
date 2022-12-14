@@ -1,13 +1,11 @@
 <template>
-  <div class="homepage" v-if="accessCheck()">
-    <div class="home-page-main">
+  <div class="aboutus">
+    <div class="aboutus-main">
       <div class="row header" style="max-width: 100%; height: 100vh">
         <div class="col-lg-6 col-sm-12 text-col">
           <h1 class="h1-header">
-            <span> Generate&nbsp;</span>
-            <span> energy &nbsp;</span><br />
-            <span> for</span>
-            <span> &nbsp;free </span>
+            <span> About&nbsp;</span>
+            <span> us &nbsp;</span><br />
           </h1>
         </div>
         <div class="col-lg-6 col-sm-12 sport-col">
@@ -24,8 +22,11 @@
       </div>
       <div class="sec2">
         <div class="row" style="margin-left: 0 !important">
+          <div class="col-lg-6 col-sm-12" style="padding: 0 !important">
+            <div class="sec2-img"></div>
+          </div>
           <div class="col-lg-6 col-sm-12">
-            <h1 class="sec2-text">About the project</h1>
+            <h1 class="sec2-text">Wie zijn wij?</h1>
             <p class="sec2-p">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -39,31 +40,14 @@
               Lorem Ipsum.
             </p>
           </div>
-          <div class="col-lg-6 col-sm-12" style="padding: 0 !important">
-            <div class="sec2-img"></div>
-          </div>
         </div>
       </div>
     </div>
-    <left-nav-bar />
   </div>
 </template>
 
 <script>
-import LeftNavBar from "../components/LeftNavbar.vue";
-
-export default {
-  components: { LeftNavBar },
-  methods: {
-     accessCheck() {
-      if (sessionStorage.getItem("token")) {
-        window.location.href = "/dashboard";
-      } else {
-        return true;
-      }
-    }, 
-  }
-};
+export default {};
 </script>
 
 <style>
@@ -82,9 +66,9 @@ export default {
   padding: 30px;
   text-align: center;
 }
-.home-page-main {
+.aboutus-main {
   width: 100%;
-  background-image: url(../assets/background.jpeg);
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/The_Hague_University_of_Applied_Sciences_20.jpg/1200px-The_Hague_University_of_Applied_Sciences_20.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -108,9 +92,9 @@ export default {
   transform: translate(-50%, -50%);
 }
 .sec2-img {
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(100% 0, 100% 0, 85% 100%, 0 100%, 0 0);
   width: 100%;
-  background-image: url(../assets/gym-pic.jpeg);
+  background-image: url(../assets/gym-pic2.jpeg);
   height: 600px;
   background-size: cover;
   background-position: 50%;
@@ -129,7 +113,7 @@ export default {
 
 .h1-header {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 40%;
@@ -165,14 +149,6 @@ span:nth-child(2) {
 
 span:nth-child(3) {
   animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-span:nth-child(4) {
-  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
-}
-
-span:nth-child(5) {
-  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
 @keyframes fade-in {
