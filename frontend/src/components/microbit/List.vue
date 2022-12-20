@@ -123,8 +123,8 @@ export default {
     }),
     goToPageEnergy(energy)
     {
-      sessionStorage.setItem('energy',energy);
-      location.href = "/checkEnergy";
+      sessionStorage.setItem('energy',JSON.stringify(energy));
+      location.href = "/micro_bits/checkEnergy";
     }
   },
 };
