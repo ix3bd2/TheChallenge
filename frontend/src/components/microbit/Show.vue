@@ -39,15 +39,19 @@
           </tr>
           <tr>
             <th scope="row">klant</th>
-            <td>{{ item['klant'] }}</td>
+            <td v-if="Object.keys(item).length === 8">
+            {{item.klant.user.username}}
+        </td>  
+            <td v-if="Object.keys(item).length === 7">
+            Deleted User
+
+        </td>   
           </tr>
-          <tr>
-            <th scope="row">energiebesparing</th>
-            <td>{{ item['energiebesparing'] }}</td>
-          </tr>
+          
           <tr>
             <th scope="row">energie</th>
-            <td>{{ item['energieJaar'] }}</td>
+            <td>          <button type="button" class="btn btn-warning" style="margin:0!important;color:white;" v-on:click="goToPageEnergy(item['energieJaar'] )"> <i class="fa fa-bolt"></i> Check</button>
+</td>
           </tr>
           <tr>
             <th scope="row">status</th>
@@ -138,6 +142,11 @@ export default {
         this.deleteItem(this.item);
       }
     },
+    goToPageEnergy(energy)
+    {
+      sessionStorage.setItem('energy',energy);
+      location.href = "/checkEnergy";
+    }
   },
 };
 </script>

@@ -54,7 +54,8 @@
 
         </td>   
         <td>
-            {{ item['energieJaar'] }}
+          <button type="button" class="btn btn-warning" style="margin:0!important;color:white;" v-on:click="goToPageEnergy(item['energieJaar'] )"> <i class="fa fa-bolt"></i> Check</button>
+          
         </td>
         <td>
             <div v-if="item['status']"><span class="badge text-bg-success">Intact</span></div>
@@ -120,6 +121,11 @@ export default {
     ...mapActions({
       getPage: 'microbit/list/default',
     }),
+    goToPageEnergy(energy)
+    {
+      sessionStorage.setItem('energy',energy);
+      location.href = "/checkEnergy";
+    }
   },
 };
 </script>
