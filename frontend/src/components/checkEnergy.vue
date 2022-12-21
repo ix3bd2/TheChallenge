@@ -47,7 +47,7 @@ export default {
         
         datasets: [
           {
-            label: "Saved energy",
+            label: "Generated energy",
             backgroundColor: "#e78200",
             data: [JSON.parse(sessionStorage.getItem('energy'))[0], JSON.parse(sessionStorage.getItem('energy'))[1], JSON.parse(sessionStorage.getItem('energy'))[2],JSON.parse(sessionStorage.getItem('energy'))[3],JSON.parse(sessionStorage.getItem('energy'))[4],JSON.parse(sessionStorage.getItem('energy'))[5],JSON.parse(sessionStorage.getItem('energy'))[6],JSON.parse(sessionStorage.getItem('energy'))[7],JSON.parse(sessionStorage.getItem('energy'))[8],JSON.parse(sessionStorage.getItem('energy'))[9],JSON.parse(sessionStorage.getItem('energy'))[10],JSON.parse(sessionStorage.getItem('energy'))[11]],
           },
