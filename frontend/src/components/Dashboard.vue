@@ -5,6 +5,7 @@
       <div class="col col-lg-4 admin-dashboard-card">
         <div class="admin-card">
           <h5 class="card-header-text">Total income</h5>
+          <h5 class="card-header-text">{{this.totalKosten}}</h5>
         </div>
       </div>
       <div class="col col-lg-4 admin-dashboard-card">
@@ -41,7 +42,30 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+import { ENTRYPOINT } from "../config/entrypoint";
+export default {
+  name: "Login",
+  data() {
+    return {
+      totalIncome: null,
+      totalKosten: null,
+    };
+  },
+  created() {
+    axios
+      .get(
+        ENTRYPOINT + "klants?page=1&itemsPerPage=10&order%5BTotalGen%5D=desc"
+      )
+      .then((response) => {
+        var array1 = response.data["hydra:member"].length;
+        this.totalIncome = response.data["hydra:member"];
+        for (var i = 0; i < array1; i++) {
+         this.totalKosten += this.totalIncome[i].kosten;
+        }
+      });
+  },
+};
 </script>
 
 <style scoped>
@@ -66,10 +90,10 @@ export default {};
 * {
   max-width: 100vw;
 }
-.card-header-text{
-    padding: 30px;
-      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+.card-header-text {
+  padding: 30px;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 
-    text-align: start;
+  text-align: start;
 }
 </style>
