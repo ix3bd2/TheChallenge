@@ -178,7 +178,7 @@ export default {
 #my-chart-id {
   position: absolute;
   top: 20%;
-  height: 65% !important;
+  height: 72% !important;
   width: 90% !important;
 }
 </style>
